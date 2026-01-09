@@ -1,9 +1,19 @@
-import { fetchProducts } from '@/lib/api';
+import Link from "next/link";
 
-export default async function Page() {
-  const products = await fetchProducts();
-
+export default function HomePage() {
   return (
-    <pre>{JSON.stringify(products, null, 2)}</pre>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-4xl font-bold mb-4">FabricsG</h1>
+      <p className="text-gray-600 mb-6">
+        Premium fabrics by the meter
+      </p>
+
+      <Link
+        href="/products"
+        className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800"
+      >
+        Browse Fabrics
+      </Link>
+    </div>
   );
 }
